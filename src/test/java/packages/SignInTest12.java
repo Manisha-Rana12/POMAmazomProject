@@ -20,7 +20,7 @@ public class SignInTest12 {
     private SignInPage signin;
     SearchFunction1 search1;
     AddToCart addtoCart;
-   
+    paymentFunctionality pf;
     
 	@BeforeMethod
 	public void setUp() throws IOException {
@@ -42,7 +42,7 @@ public class SignInTest12 {
 	    signin = new SignInPage(driver);
 	    search1 = new SearchFunction1(driver);
 	    addtoCart = new AddToCart(driver);
-	   
+	    pf = new paymentFunctionality(driver);
 	}
 	@Test(priority = 0)
 	public void testSignIn() throws InterruptedException {
@@ -69,8 +69,12 @@ public class SignInTest12 {
 		addtoCart.addNow("iphone15pro");
 		Thread.sleep(2000);
 	}
-	
-	
+	@Test(priority = 3)
+	public void paymentTest() throws InterruptedException {
+		pf.giftcodeMethod("8778");
+		pf.cardNumberMethod("8778 7878 5454");
+		Thread.sleep(2000);
+	}
 	
 	@AfterMethod
     public void tearDown() {

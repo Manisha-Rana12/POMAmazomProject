@@ -43,15 +43,42 @@ public class paymentFunctionality {
 	
 	//driver.switchTo().frame("a-icon a-icon-dropdown");
 	@FindBy(className = "a-button-text a-declarative")
-//	@FindBy(xpath = "(//span[@class='a-button-text a-declarative'])[2]")
+
 	private WebElement date;
 	
 	
 	@FindBy(xpath = "//span[@id='pp-wsRO40-23']//span[@role='button']")
 	private WebElement year;
 	
-
+    public void addToCartMethod() {
+    	this.aToCart.click();
+    }
 	
-	
+    public void aproductMethod() {
+    	this.item.click();
+    }
+    public void buyNowMethod() {
+    	this.buy.click();
+    }
+    public void giftcodeMethod(String giftcode) {
+    	this.giftcode.sendKeys(giftcode);
+    }
+    public void applyCodeMethod() {
+    	this.applycode.click();
+    }
+    public void creditrdoBtnMethod() {
+    	this.creditRadioBtn.click();
+    	this.plusIcon.click();
+    	
+    }
+    public void cardNumberMethod(String cardnum) {
+    	this.cardNum.sendKeys(cardnum);
+    }
+    public void dateMethod() {
+    	this.date.click();
+    }
+    public void YearMethod() {
+    	this.year.click();
+    }
 }
 
